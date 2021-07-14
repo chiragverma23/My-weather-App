@@ -4,9 +4,10 @@ const api ={
     baseUrl : "http://api.openweathermap.org/data/2.5/"
 }
 
-const searchbox = document.querySelector('.search-box');
+const searchbox =       document.querySelector('.search-box');
 searchbox.addEventListener('keypress', setQuery);
 // getting the query by typing in searchbox
+
 function setQuery(evt) {
   if (evt.keyCode == 13) {
       getResults(searchbox.value);
@@ -23,7 +24,7 @@ function getResults(val){
 //displaying results
 function displayresults(weather){
     let city=document.querySelector(".location .city");
-    city.innerText = `${weather.name},${weather.sys.country}`;
+    city.innerText =     `${weather.name},${weather.sys.country}`;
 
     let now=new Date();
     let date =document.querySelector(".location .date");
@@ -41,7 +42,8 @@ function displayresults(weather){
 }
 // building date
 function dateBuilder (d) {
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let months = 
+      ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   
     let day = days[d.getDay()];
