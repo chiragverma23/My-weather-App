@@ -1,4 +1,4 @@
-//api fetching 
+//api fetching
 const api ={
     key : "5a1a160e549363767e5ede66a5bf97bc",
     baseUrl : "http://api.openweathermap.org/data/2.5/"
@@ -31,7 +31,7 @@ function displayresults(weather){
     date.innerText=dateBuilder(now);
 
     let temp=document.querySelector(".current .temp");
-    temp.innerHTML=`${Math.round(weather.main.temp)}<span>°c</span>`; 
+    temp.innerHTML=`${Math.round(weather.main.temp)}<span>°c</span>`;
 
     let weather_el = document.querySelector('.current .weather');
     weather_el.innerText = weather.weather[0].main;
@@ -42,14 +42,14 @@ function displayresults(weather){
 }
 // building date
 function dateBuilder (d) {
-    let months = 
+    let months =
       ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  
+
     let day = days[d.getDay()];
     let date = d.getDate();
     let month = months[d.getMonth()];
     let year = d.getFullYear();
-  
+
     return `${day} ${date} ${month} ${year}`;
   }
